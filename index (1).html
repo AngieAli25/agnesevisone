@@ -1596,7 +1596,7 @@
             <h3>Mandami un messaggio</h3>
             <p class="form-sub">Rispondo entro 24 ore. I campi con * sono obbligatori.</p>
 
-            <form id="contact-form" action="/thank-you/" method="get" novalidate>
+            <form action="/thank-you/" method="get" novalidate>
               <div class="frow">
                 <div class="fgroup">
                   <label for="nome">Nome <span class="req">*</span></label>
@@ -1705,16 +1705,6 @@
       el.style.transitionDelay = `${(i % 4) * 0.08}s`;
       revealObserver.observe(el);
     });
-
-    // Form contatti → redirect thank-you (conversione Meta Pixel)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', e => {
-        if (!contactForm.checkValidity()) return;
-        e.preventDefault();
-        window.location.href = '/thank-you/';
-      });
-    }
 
     // Timeline "Come funziona" — entrata sequenziale (una sola volta)
     const stepsList = document.querySelector('.steps-list');
