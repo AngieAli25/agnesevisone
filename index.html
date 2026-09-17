@@ -1596,7 +1596,13 @@
             <h3>Mandami un messaggio</h3>
             <p class="form-sub">Rispondo entro 24 ore. I campi con * sono obbligatori.</p>
 
-            <form action="/thank-you/" method="get" novalidate>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms — account "Landing page" di Agnese Visone. La access key è pubblica per design. -->
+              <input type="hidden" name="access_key" value="e502220c-95bd-4bf3-a56c-9fe0a045fcf5" />
+              <input type="hidden" name="from_name" value="Landing Agnese Visone" />
+              <input type="hidden" name="redirect" value="https://www.agnesevisonepedagogista.it/thank-you/" />
+              <!-- Honeypot anti-spam: deve restare invisibile e vuoto -->
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
               <div class="frow">
                 <div class="fgroup">
                   <label for="nome">Nome <span class="req">*</span></label>
